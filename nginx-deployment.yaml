@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: pradeepch82/tea:1.1
         ports:
         - containerPort: 80
