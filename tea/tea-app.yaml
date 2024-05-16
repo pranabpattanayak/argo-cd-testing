@@ -32,6 +32,6 @@ spec:
     targetPort: 80
     protocol: TCP
     name: http
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: tea
