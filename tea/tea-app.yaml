@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: tea 
-        image: pradeepch82/tea:1.4
+        image: pradeepch82/tea:1.1
         ports:
         - containerPort: 80
 ---
