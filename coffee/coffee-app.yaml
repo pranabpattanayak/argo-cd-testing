@@ -1,5 +1,4 @@
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -16,12 +15,11 @@ spec:
         app: coffee
     spec:
       containers:
-      - name: coffee
-        image: pradeepch82/coffee:1.1
-        ports:
-        - containerPort: 80
+        - name: coffee
+          image: pradeepch82/coffee:1.1
+          ports:
+            - containerPort: 80
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
@@ -29,10 +27,10 @@ metadata:
   namespace: cdc-k8s-training-practice
 spec:
   ports:
-  - port: 80
-    targetPort: 80
-    protocol: TCP
-    name: http
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
   type: ClusterIP
   selector:
     app: coffee
@@ -47,17 +45,17 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: tea 
+      app: tea
   template:
     metadata:
       labels:
-        app: tea 
+        app: tea
     spec:
       containers:
-      - name: tea 
-        image: pradeepch82/tea:1.1
-        ports:
-        - containerPort: 80
+        - name: tea
+          image: pradeepch82/tea:1.1
+          ports:
+            - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -67,10 +65,10 @@ metadata:
   labels:
 spec:
   ports:
-  - port: 80
-    targetPort: 80
-    protocol: TCP
-    name: http
-  type:ClusterIP
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
+  type: ClusterIP
   selector:
     app: tea
