@@ -5,7 +5,7 @@ metadata:
   name: tea
   namespace: cafe
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: tea 
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: tea 
-        image: pradeepch82/tea:1.1
+        image: pradeepch82/tea:1.2
         ports:
         - containerPort: 80
 ---
