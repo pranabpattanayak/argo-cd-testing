@@ -5,7 +5,7 @@ metadata:
   name: tea
   namespace: cafe
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: tea 
